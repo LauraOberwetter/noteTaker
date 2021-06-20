@@ -29,3 +29,8 @@ router.post("/notes", (req, res) => { // making the endpoint
       res.status(500).json(err);
     });
 });
+
+//DELETE notes
+
+//export router
+module.exports = router;

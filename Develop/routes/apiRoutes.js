@@ -11,6 +11,6 @@ router.get('/notes', (req, res) => { // making the endpoint
         console.log(err);
         res.status(500).json(err);
     })
-
+});
 
 //POST notes

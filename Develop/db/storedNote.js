@@ -27,6 +27,7 @@ class StoredNote {
   }
   //when saved
   //error here? Cannot destructure property 'title' of 'data' as it is undefined. Isn't data defined here?
+  //^resolved, but only title is returned
   addNote(data) {
     const { title, text } = data;
     console.log(data);

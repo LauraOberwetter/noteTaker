@@ -1,8 +1,8 @@
-const fs = require("fs");
+const fs = require("fs"); //required here and in storedNote....not sure if both are needed
 const router = require('express').Router();
-const storedNote = require('../db/storedNote'); //use this if making seperate store.js file for data
+const storedNote = require('../db/storedNote'); //class from storedNote.js
 
-//GET notes
+//get /notes
 router.get("/notes", (req, res) => { // making the endpoint
     storedNote
     .getStoredNote()
@@ -16,7 +16,7 @@ router.get("/notes", (req, res) => { // making the endpoint
     });
 });
 
-//POST notes
+//post /notes
 router.post("/notes", (req, res) => { // making the endpoint
     storedNote
     .addNote(req.body)
@@ -30,7 +30,7 @@ router.post("/notes", (req, res) => { // making the endpoint
     });
 });
 
-//DELETE notes
+//date /notes (bonus if extra time)
 
 //export router
 module.exports = router;

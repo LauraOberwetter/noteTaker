@@ -1,4 +1,4 @@
-const router = require ('express').Router(); // 
+const router = require ('express').Router(); // connect to express
 const path = require('path'); // good to use since we are serving static files
 
 //defining the notes page route

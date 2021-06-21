@@ -1,4 +1,4 @@
-const util = require('util');
+const util = require('util'); //need this for fs
 const fs = require('fs'); //require fs to return promises
 const writeFile = util.promisify(fs.writeFile); //write data to a file
 const readFile = util.promisify(fs.readFile); //read data from file
@@ -30,12 +30,12 @@ class StoredNote {
   addNote(data) {
     const { title, text } = data;
     console.log(data);
-    if (!title || !text) {
-      throw new Error("Please enter a note");
-    }
+
     const savedNote = {title, text};
 
-    return savedNote()
+    return this.getStoredNote()
+        .then(() => savedNote)
+        .then((savedNote) => this.write(savedNote));
 
   }
 };

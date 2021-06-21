@@ -19,7 +19,7 @@ router.get("/notes", (req, res) => { // making the endpoint
 //POST notes
 router.post("/notes", (req, res) => { // making the endpoint
     storedNote
-    .addNote()
+    .addNote(req.body)
     .then((data) => {
       console.log(data);
       return res.json(data);

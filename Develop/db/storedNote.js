@@ -1,15 +1,15 @@
 const util = require('util');
 const fs = require('fs'); //require fs to return promises
-    const writeFileAsync = util.promisify(fs.writeFile); //write data to a file
-    const readFileAsync = util.promisify(fs.readFile); //read data from file
+const writeFile = util.promisify(fs.writeFile); //write data to a file
+const readFile = util.promisify(fs.readFile); //read data from file
 
 class StoredNote {
     read () {
-        return readFileAsync('db/db.json', 'utf8');
+        return readFile('db/db.json', 'utf8');
     }
 
     write (data) {
-        return writeFileAsync('db/db.json', JSON.stringify(data));
+        return writeFile('db/db.json', JSON.stringify(data));
     }
 
     //read, parse, and return entered data 
